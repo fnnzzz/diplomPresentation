@@ -1,0 +1,21 @@
+  // ----- види робіт ------
+  public function add()
+  {
+    $this->load->helper('form');
+  
+    if(empty($this->input->post()))
+    {
+      $this->load->view('worktype_add');
+    }
+    else
+    {
+      if($this->diplom->worktype_add())
+      {
+        redirect('feedback/success', 'refresh');
+      }
+      else
+      {
+        redirect('feedback/success', 'refresh');
+      }
+    }
+  }

@@ -1,0 +1,22 @@
+  // ----- працівники ------
+  public function add()
+  {
+    $this->load->helper('form');
+  
+    if(empty($this->input->post()))
+    {
+      $data['query'] = $this->diplom->staff_joins();
+      $this->load->view('staff_add', $data);
+    }
+    else
+    {
+      if($this->diplom->staff_add())
+      {
+        redirect('feedback/success', 'refresh');
+      }
+      else
+      {
+        redirect('feedback/success', 'refresh');
+      }
+    }
+  }

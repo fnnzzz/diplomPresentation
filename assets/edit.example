@@ -1,0 +1,23 @@
+  // ----- ПРОМО-КОДИ ------
+
+  public function edit($id)
+  {
+    $this->load->helper('form');
+  
+    if(empty($this->input->post()))
+    {
+      $data['query'] = $this->diplom->promo_edit_get($id);
+      $this->load->view('promo_edit', $data);
+    }
+    else
+    {
+      if($this->diplom->promo_edit_update($id))
+      {
+        redirect('feedback/success', 'refresh');
+      }
+      else
+      {
+        redirect('feedback/success', 'refresh');
+      }
+    }
+  }

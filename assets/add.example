@@ -1,0 +1,24 @@
+  
+  // ----- заявки ------
+  public function add()
+  {
+    $this->load->helper('form');
+      
+  
+    if(empty($this->input->post()))
+    {
+      $data['query'] = $this->diplom->request_joins();
+      $this->load->view('request_add', $data);
+    }
+    else
+    {
+      if($this->diplom->request_add())
+      {
+        redirect('feedback/success', 'refresh');
+      }
+      else
+      {
+        redirect('feedback/success', 'refresh');
+      }
+    }
+  }

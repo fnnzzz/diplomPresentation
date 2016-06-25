@@ -1,0 +1,9 @@
+  public function success()
+  {
+    $this->load->view('feedback_success');  
+  }
+
+  public function error()
+  {
+    $this->load->view('feedback_error');  
+  }

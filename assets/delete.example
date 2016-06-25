@@ -1,0 +1,9 @@
+  // ----- видалення - види робіт ------
+
+  public function delete($id)
+  {
+    if($this->diplom->data_delete('worktype', $id))
+      redirect('feedback/error', 'refresh');
+    else
+      redirect('worktype/index', 'refresh');
+  }

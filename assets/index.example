@@ -1,0 +1,21 @@
+  
+  // ----- заявки ------
+  public function index()
+  {
+    $data['query'] = $this->diplom->requests_list();
+    $this->load->view('requests', $data); 
+  }
+
+  // ----- промо-коди ------
+  public function index()
+  {
+    $data['query'] = $this->diplom->data_list("promo");
+    $this->load->view('promo', $data);  
+  }
+
+  // ----- клієнти ------
+  public function index()
+  {
+    $data['query'] = $this->diplom->data_list("clients");
+    $this->load->view('clients', $data);  
+  }
