@@ -1,0 +1,26 @@
+    
+    // додавання видів робіт
+    function worktype_add()
+    {
+        $data = array(
+            'title_worktype' => $this->input->post('worktype_add_title'),
+            'type_worktype' => $this->input->post('worktype_add_type'),
+            'commentary_worktype' => $this->input->post('worktype_add_comment'),
+        );
+
+        $this->db->insert('worktype', $data);
+    }
+
+    // додавання нового рахунку
+
+    function invoices_add()
+    {
+        $data = array(
+            'fullname_invoice' => $this->input->post('invoices_add_fullname'),
+            'cost_invoice' => $this->input->post('invoices_add_cost'),
+            'commentary_invoice' => $this->input->post('invoices_add_comment'),
+            'date_invoice' => $this->input->post('invoices_add_datetime'),
+        );
+
+        $this->db->insert('invoices', $data);
+    }

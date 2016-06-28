@@ -1,0 +1,29 @@
+    
+    // вибірка заявок
+    function requests_list()
+    {
+        $this->db->order_by("requests_id", "desc"); 
+        $this->db->select('*');
+        $this->db->from('requests');
+        $this->db->join('clients', 'clients.clients_id = requests.clientname');
+        $this->db->join('worktype', 'worktype.worktype_id = requests.worktype');
+        $this->db->join('staff', 'staff.staff_id = requests.workman');
+        $this->db->join('invoices', 'invoices.invoices_id = requests.invoice');
+        $this->db->join('promo', 'promo.promo_id = requests.promo');
+
+
+        $query = $this->db->get();
+        return $query;
+    }
+    
+    // вибірка працівників
+    function staff_list()
+    {
+        $this->db->order_by("staff_id", "desc");
+        $this->db->select('*');
+        $this->db->from('staff');
+        $this->db->join('worktype', 'worktype.worktype_id = staff.profession_staff');
+
+        $query = $this->db->get();
+        return $query;
+    }

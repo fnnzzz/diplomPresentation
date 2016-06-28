@@ -1,0 +1,6 @@
+    
+    // видалення
+    function data_delete($topic, $id)
+    {
+        $this->db->delete($topic, array($topic.'_id' => $id)); 
+    }

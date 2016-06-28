@@ -1,9 +1,9 @@
 $db['default'] = array(
   'dsn' => '',
   'hostname' => 'localhost',
-  'username' => 'u485392493_werew',
+  'username' => 'feninetsv123',
   'password' => 'I7q60ibSgY',
-  'database' => 'u485392493_wrfwr',
+  'database' => 'diplom_scs12_feninets',
   'dbdriver' => 'mysqli',
   'dbprefix' => '',
   'pconnect' => FALSE,

@@ -1,0 +1,33 @@
+    function request_edit_get($id)
+    {
+        $this->db->order_by("requests_id", "desc");
+        $this->db->select('*');
+        $this->db->where('requests_id', $id);
+        $this->db->from('requests');
+        $this->db->join('clients', 'clients.clients_id = requests.clientname');
+        $this->db->join('worktype', 'worktype.worktype_id = requests.worktype');
+        $this->db->join('staff', 'staff.staff_id = requests.workman');
+        $this->db->join('invoices', 'invoices.invoices_id = requests.invoice');
+        $this->db->join('promo', 'promo.promo_id = requests.promo');
+     
+        $query = $this->db->get();
+        return $query;
+    }
+
+    function request_edit_update($id)
+    {
+        $data = array(
+            'title' => $this->input->post('request_add_descr'),
+            'clientname' => $this->input->post('request_add_clientname'),
+            'worktype' => $this->input->post('request_add_worktype'),
+            'commentary' => $this->input->post('request_add_comment'),
+            'workman' => $this->input->post('request_add_workman'),
+            'startdate' => $this->input->post('request_add_start'),
+            'enddate' => $this->input->post('request_add_end'),
+            'invoice' => $this->input->post('request_add_invoice'),
+            'promo' => $this->input->post('request_add_promo'),
+        );
+
+        $this->db->where('requests_id', $id);
+        $this->db->update('requests', $data);    
+    }

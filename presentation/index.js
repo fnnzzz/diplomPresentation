@@ -37,6 +37,9 @@ const images = {
   edit_view: require('../assets/edit_view.png'),
   add_view: require('../assets/add_view.png'),
   mysql: require('../assets/mysql.png'),
+  db_physic: require('../assets/db_physic.png'),
+  db_logic: require('../assets/logic_db.png'),
+  uml_dg: require('../assets/uml_diagrama.png'),
 };
 
 preloader(images);
@@ -417,13 +420,14 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["zoom", "fade"]} bgColor="primary">
 
-            <Heading size={1} caps fit textColor="#ccc">
+            <Heading size={1} caps textSize="2.2em" textColor="#ccc">
               Контролер статусу
             </Heading>
 
             <br />
 
             <CodePane
+              textSize="0.5em"
               lang="javascript"
               source={require("raw!../assets/success_error.example")}
               margin="20px auto"
@@ -434,7 +438,7 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["zoom", "fade"]} bgColor="primary">
 
-            <Heading size={1} caps fit textColor="#ccc">
+            <Heading size={1} caps textSize="1.5em" textColor="#ccc">
               Функція відображення
             </Heading>
 
@@ -452,8 +456,8 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["slide"]} bgColor="primary">
 
-            <Heading size={1} caps fit textColor="#ccc">
-              Функція додавання [ заявки ]
+            <Heading size={1} caps textSize="1.5em" textColor="#ccc">
+              Функція додавання
             </Heading>
 
             <br />
@@ -467,46 +471,9 @@ export default class Presentation extends React.Component {
 
 
 
-
           <Slide transition={["slide"]} bgColor="primary">
 
-            <Heading size={1} caps fit textColor="#ccc">
-              Функція додавання [ працівники ]
-            </Heading>
-
-            <br />
-
-            <CodePane
-              lang="javascript"
-              source={require("raw!../assets/add1.example")}
-              margin="20px auto"
-            />
-          </Slide>
-
-
-
-
-          <Slide transition={["slide"]} bgColor="primary">
-
-            <Heading size={1} caps fit textColor="#ccc">
-              Функція додавання [ види робіт ]
-            </Heading>
-
-            <br />
-
-            <CodePane
-              lang="javascript"
-              source={require("raw!../assets/add2.example")}
-              margin="20px auto"
-            />
-          </Slide>
-
-
-
-
-          <Slide transition={["slide"]} bgColor="primary">
-
-            <Heading size={1} caps fit textColor="#ccc">
+            <Heading size={1} caps textSize="1.5em" textColor="#ccc">
               Функція редагування
             </Heading>
 
@@ -523,13 +490,14 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["slide"]} bgColor="primary">
 
-            <Heading size={1} caps fit textColor="#ccc">
+            <Heading size={1} caps textSize="2.2em" textColor="#ccc">
               Функція видалення
             </Heading>
 
             <br />
 
             <CodePane
+              textSize="0.5em"
               lang="javascript"
               source={require("raw!../assets/delete.example")}
               margin="20px auto"
@@ -681,6 +649,153 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
+
+
+
+
+          <Slide transition={["fade"]} bgColor="#212121" textColor="#E1BEE7">
+
+            <Heading size={1} caps textSize="1.7em" textColor="#ccc">
+              Обґрунтування вибору реляційної бази даних
+            </Heading>
+            <br />
+            <br />
+
+            <Text textColor="#eee" fontSize="1.5em">
+                У реляційній моделі база даних являє собою централізоване сховище 
+таблиць, що забезпечує безпечний одночасний доступ до інформації з боку багатьох користувачів. У рядках таблиць частина полів містить дані, стосовні безпосередньо до запису, а частина - посилання на записи інших таблиць. Таким чином, зв'язки між записами є невід'ємною властивістю реляційної моделі. Кожен запис таблиці має однакову структуру. 
+            </Text>
+          </Slide>
+
+
+
+          <Slide transition={["fade"]} bgColor="#212121" textColor="#E1BEE7">
+
+            <Heading size={1} caps textSize="2.2em" textColor="#ccc">
+              Проектування Бази Даних
+            </Heading>
+            <br />
+            <br />
+
+             <Image src={images.db_physic.replace("/", "")} margin="20px auto" height="400px"/>
+
+          </Slide>
+
+
+
+
+
+
+
+          <Slide transition={["zoom"]} bgColor="primary" textColor="#E1BEE7">
+
+            <Heading size={1} caps fit textColor="#ccc">
+              Взаємодія с Базою даних <br/> (CodeIgniter)
+            </Heading>
+           
+
+          </Slide>
+
+
+
+
+
+          <Slide transition={["slide"]} bgColor="primary">
+
+            <Heading size={1} caps textSize="1.2em" textColor="#ccc">
+              Модель. Вибірка даних з БД
+            </Heading>
+
+            <br />
+
+            <CodePane
+              textSize="0.35em"
+              lang="javascript"
+              source={require("raw!../assets/model_list.example")}
+              margin="0 auto"
+            />
+          </Slide>
+
+
+
+
+          <Slide transition={["slide"]} bgColor="primary">
+
+            <Heading size={1} caps textSize="1.2em" textColor="#ccc">
+              Модель. Додавання даних в БД
+            </Heading>
+
+            <br />
+
+            <CodePane
+              textSize="0.4em"
+              lang="javascript"
+              source={require("raw!../assets/model_add.example")}
+              margin="0 auto"
+            />
+          </Slide>
+
+
+
+
+
+          <Slide transition={["slide"]} bgColor="primary">
+
+            <Heading size={1} caps textSize="1.2em" textColor="#ccc">
+              Модель. редагування даних
+            </Heading>
+
+            <br />
+
+            <CodePane
+              textSize="0.35em"
+              lang="javascript"
+              source={require("raw!../assets/model_edit.example")}
+              margin="0 auto"
+            />
+          </Slide>
+
+
+
+
+
+          <Slide transition={["slide"]} bgColor="primary">
+
+            <Heading size={1} caps textSize="1.55em" textColor="#ccc">
+              Модель. Видалення даних з БД
+            </Heading>
+
+            <br />
+
+            <CodePane
+              textSize="0.5em"
+              lang="javascript"
+              source={require("raw!../assets/model_delete.example")}
+              margin="0 auto"
+            />
+          </Slide>
+
+
+
+
+
+          <Slide transition={["zoom"]} bgColor="primary" textColor="#E1BEE7">
+
+            <Heading size={1} caps fit textColor="#ccc">
+              UML-діаграма взаємодії
+            </Heading>
+           
+
+          </Slide>
+
+
+
+
+          <Slide transition={["fade"]} bgColor="#212121" textColor="#E1BEE7">
+
+             <Image src={images.uml_dg.replace("/", "")} margin="20px auto" height="600px"/>
+
+          </Slide>
 
 
 
