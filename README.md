@@ -1,7 +1,7 @@
-# diplomPresentation
+# diploma-presentation
 my presentation for defending my diploma of bachelor
 
-DEMO: http://diplom-feninets.esy.es/presentation/
+DEMO: https://fnnzzz.github.io/diploma-presentation/
 
 developed with https://github.com/FormidableLabs/spectacle
 
